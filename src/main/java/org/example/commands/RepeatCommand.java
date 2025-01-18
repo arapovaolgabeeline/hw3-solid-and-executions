@@ -1,15 +1,19 @@
 package org.example.commands;
 
-import java.util.Queue;
+import org.example.EventLoop;
 
 // Реализовать Команду, которая повторяет Команду, выбросившую исключение.
 public class RepeatCommand implements ICommand {
-    private ICommand failedCommand;
-    private Queue commandQueue;
+    private final ICommand failedCommand;
+
+    public RepeatCommand(ICommand failedCommand) {
+        this.failedCommand = failedCommand;
+    }
 
     @Override
     public void execute() {
-        commandQueue.add(commandQueue);
+        // тут нужен IoC, но он будет в следующем дз
+        EventLoop.COMMANDS_QUEUE.add(failedCommand);
     }
 
 }
