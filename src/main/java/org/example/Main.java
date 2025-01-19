@@ -1,23 +1,17 @@
 package org.example;
 
 import org.example.commands.ICommand;
-import org.example.commands.MoveCommand;
-import org.example.commands.RepeatCommand;
 import org.example.handlers.ExceptionHandler;
 import org.example.handlers.LoggingExceptionHandler;
 
 public class Main {
     public static void main(String[] args) {
-        MoveCommand command = new MoveCommand();
-
+        ICommand command = null;
         EventLoop.COMMANDS_QUEUE.add(command);
 
-        ExceptionHandler.registerHandler(MoveCommand.class, Exception.class,
-                (ICommand failedCommand, Exception ex) -> new LoggingExceptionHandler());
+        ExceptionHandler.registerHandler(ICommand.class, Exception.class, new LoggingExceptionHandler());
 
         EventLoop eventLoop = new EventLoop();
-
-
         eventLoop.start();
     }
 
