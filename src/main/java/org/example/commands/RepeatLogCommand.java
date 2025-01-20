@@ -1,9 +1,9 @@
 package org.example.commands;
 
 /**
-*  С помощью Команд из пункта 4 и пункта 6 реализовать следующую обработку исключений:
+ * 8. С помощью Команд из пункта 4 и пункта 6 реализовать следующую обработку исключений:
  * при первом выбросе исключения повторить команду, при повторном выбросе исключения записать информацию в лог.
-* */
+ */
 public class RepeatLogCommand implements ICommand {
     private final Exception exception;
     private final ICommand failedCommand;

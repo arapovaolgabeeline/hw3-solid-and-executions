@@ -1,6 +1,6 @@
 package org.example.commands;
 
-// Реализовать Команду, которая записывает информацию о выброшенном исключении в лог
+// 4. Реализовать Команду, которая записывает информацию о выброшенном исключении в лог
 public class ExceptionLoggerCommand implements ICommand {
     private final Exception exception;
 

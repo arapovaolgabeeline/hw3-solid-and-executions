@@ -8,6 +8,8 @@ import org.example.functions.IHandler;
 public class ExceptionHandler {
     private static Map<Class, LinkedHashMap<Class, IHandler>> store;
 
+    // 3. Есть множество различных обработчиков исключений. Выбор подходящего обработчика исключения делается на основе
+    // экземпляра перехваченного исключения и команды, которая выбросила исключение
     public static ICommand handle(ICommand command, Exception ex) {
         Class<? extends ICommand> commandClass = command.getClass();
         Class<? extends Exception> exceptionClass = ex.getClass();

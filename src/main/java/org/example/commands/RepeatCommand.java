@@ -1,6 +1,6 @@
 package org.example.commands;
 
-// Реализовать Команду, которая повторяет Команду, выбросившую исключение.
+// 6. Реализовать Команду, которая повторяет Команду, выбросившую исключение
 public class RepeatCommand implements ICommand {
     private final ICommand failedCommand;
 
