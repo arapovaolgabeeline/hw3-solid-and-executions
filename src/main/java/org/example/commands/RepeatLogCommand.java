@@ -18,7 +18,7 @@ public class RepeatLogCommand implements ICommand {
         try {
             new RepeatCommand(failedCommand).execute();
         } catch (Exception ex) {
-            new ExceptionLoggerCommand(ex).execute();
+            new ExceptionLoggerCommand(exception).execute();
         }
     }
 
